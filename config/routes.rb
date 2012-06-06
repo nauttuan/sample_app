@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+
   get "pages/home"
   get "pages/contact"
   get "pages/about"
@@ -9,6 +11,8 @@ SampleApp::Application.routes.draw do
   match '/help',    :to => 'pages#help'
 # match '/', :to => 'pages#home' is better written as 
   root :to => 'pages#home' 
+
+  match '/signup',  :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
